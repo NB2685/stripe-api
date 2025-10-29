@@ -33,7 +33,7 @@ module.exports = async (req, res) => {
         // プランIDマッピング（環境変数から取得）
         const planMapping = {
             'initiate': process.env.PRICE_ID_INITIATE,
-            'warrior': process.env.PRICE_ID_WARRIOR,,
+            'warrior': process.env.PRICE_ID_WARRIOR,
             'guardian': process.env.PRICE_ID_GUARDIAN
         };
 
