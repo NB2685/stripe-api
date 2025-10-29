@@ -1,0 +1,9 @@
+{
+  "name": "stripe-api",
+  "version": "1.0.0",
+  "description": "Stripe subscription API",
+  "main": "api/subscribe.js",
+  "dependencies": {
+    "stripe": "^14.0.0"
+  }
+}
