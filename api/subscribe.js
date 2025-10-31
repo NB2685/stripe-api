@@ -8,7 +8,7 @@ module.exports = async (req, res) => {
     // CORS設定（最優先設定）
     // ==========================================
     res.setHeader('Access-Control-Allow-Credentials', 'true');
-    res.setHeader('Access-Control-Allow-Origin', 'https://nb2685.github.io');
+    res.setHeader('Access-Control-Allow-Origin', 'https://blockchain-lab.net');
     res.setHeader('Access-Control-Allow-Methods', 'GET,OPTIONS,PATCH,DELETE,POST,PUT');
     res.setHeader('Access-Control-Allow-Headers', 
         'X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version, Authorization'
