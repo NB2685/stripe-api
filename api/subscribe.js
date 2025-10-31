@@ -7,13 +7,24 @@ module.exports = async (req, res) => {
     // ==========================================
     // CORS設定（最優先設定）
     // ==========================================
+    const allowedOrigins = [
+        'https://blockchain-lab.net',
+        'https://www.blockchain-lab.net',
+        'https://xtribe.me',
+        'https://www.xtribe.me'
+    ];
+
+    const origin = req.headers.origin;
+    if (allowedOrigins.includes(origin)) {
+        res.setHeader('Access-Control-Allow-Origin', origin);
+    }
+
     res.setHeader('Access-Control-Allow-Credentials', 'true');
-    res.setHeader('Access-Control-Allow-Origin', 'https://blockchain-lab.net');
     res.setHeader('Access-Control-Allow-Methods', 'GET,OPTIONS,PATCH,DELETE,POST,PUT');
     res.setHeader('Access-Control-Allow-Headers', 
         'X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version, Authorization'
     );
-
+    
     // OPTIONSリクエスト（プリフライト）を即座に返す
     if (req.method === 'OPTIONS') {
         console.log('OPTIONS request received');
@@ -118,7 +129,7 @@ module.exports = async (req, res) => {
             status: 'success',
             subscription_id: subscription.id,
             customer_id: customer.id,
-            redirect_url: 'https://www.xtribe.me/join/contract-terms/' + plan
+            redirect_url: 'https://www.xtribe.me/join/contract-terms/'
         });
 
     } catch (error) {
